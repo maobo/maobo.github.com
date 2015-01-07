@@ -25,6 +25,14 @@
 </head>
 
 <body>
+
+<label>账号：<input type="text" name="" value="" placeholder="请输入您的账号" id="zh"></label>
+<label>密码：<input type="password" name="" value=""placeholder="请输入您的密码" id="mm"></label>
+<button type="" id="submitcoun"  >登录</button><br>
+<hr>
+
+</form>
+
 <center>
 <FORM action=http://www.baidu.com/baidu target=_blank>
 <TABLE bgColor=#ffffff>
@@ -93,6 +101,12 @@ Google</A>
 <center>
 <a  href="page.html" title="">分页</a>
 </center>
+
+<center>
+  <div id="welcome">
+    
+  </div>
+</center>
 <script type="text/javascript">
 $(document).ready(function(){
   $("#mynav").hide();
@@ -105,8 +119,20 @@ $(document).ready(function(){
 });
 
 $(function(){
-  console.info("hello 欢迎访问这个实验页面，好可惜只能是静态的！早点睡吧 安了~");
+  console.info("hello ~");
+
+  $("#submitcoun").click(function(){
+    var zh = $("#zh").val();
+    var mm = $("#mm").val();
+    if (zh=="maobo"&&mm=="123") {
+      $("#welcome").html("<b>welcome! success log in!</b>");
+    };
+    console.info(zh+mm);
+  });
 });
+
+
+
 </script>
 
 

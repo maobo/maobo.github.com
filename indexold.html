@@ -1,0 +1,146 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>MaoBo</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Description" />
+	<link rel="stylesheet" href="Stylesheet Location" type="text/css" />
+	
+<style type="text/css"> 
+/*全局分页*/
+.pages { overflow: hidden; text-align: center; padding: 32px 0 0; font-size: 12px; }
+.pages a { display: inline-block; color: #282828; border: 1px solid #eee; padding: 10px 14px; margin: 0 5px; }
+.pages a:hover { text-decoration: none; border: 1px solid #41bcc1; background: #41bcc1; color: #fff; }
+.pages span { display: inline-block; padding: 10px 14px; margin: 0 5px; border: 1px solid #eee; }
+.pages .current { background: #41bcc1; color: #fff; }
+.pages .arrwo { display: inline-block; width: 0px; height: 0px; vertical-align: middle; border-bottom: 5px solid transparent; border-top: 5px solid transparent; font-size: 0px; line-height: 0px; margin: 0; padding: 0; }
+.pages  .last_on .arrow_left { border-right: 5px solid #282828; }
+.pages  .last_off .arrow_left { border-right: 5px solid #cbcbcb; }
+.pages  .next_on .arrow_right { border-left: 5px solid #282828; }
+.pages  .next_off .arrow_right { border-left: 5px solid #cbcbcb; }
+.div1 { height: 200px; float: right; }
+.div2 { float: right; }
+div { text-align: center; }
+</style> 
+	
+	
+</head>
+
+<body>
+<div class="div1">
+<label>账号：<input type="text" name="" value="" placeholder="请输入您的账号" id="zh"></label>
+<label>密码：<input type="password" name="" value=""placeholder="请输入您的密码" id="mm"></label>
+<button type="" id="submitcoun"  >登录</button><br>
+</div>
+
+<div class="cent">
+<center>
+<FORM action=http://www.baidu.com/baidu target=_blank>
+<TABLE bgColor=#ffffff>
+<TBODY><TR><TD><INPUT type=hidden value=baidu name=tn> <A href="http://www.baidu.com/"><IMG alt=Baidu src="http://img.baidu.com/img/logo-80px.gif" w align=bottom border=0></A>
+<INPUT size=30 name=word> <INPUT type=submit value=百度搜索>
+</TD></TR></TBODY></TABLE></FORM>
+
+
+<!-- <FORM method=GET action="http://www.google.com/search" target="_blank">
+<TABLE bgcolor="#FFFFFF" style="border:none;"><tr><td>
+<A HREF="http://www.google.com/intl/zh-CN/" target="_blank">
+Google</A>
+<INPUT TYPE=text name=q size=31 maxlength=255 value="">
+<INPUT TYPE=hidden name=hl  value=zh-CN>
+<INPUT type=submit name=btnG  value="Google搜索">
+</td></tr></TABLE>
+</FORM>
+<br><br><br> -->
+<div id="mynav">
+<table width="312" border="0" cellspacing="2" cellpadding="2">
+  <tbody>
+    <tr>
+      <th width="52" scope="col"><a href="http://www.dangdang.com/" target="_blank">当当网</a></th>
+      <th width="40" scope="col"><a href="http://www.jd.com/" target="_blank">京东</a></th>
+      <th width="50" scope="col"><a href="http://www.taobao.com/" target="_blank">淘宝</a></th>
+      <th width="51" scope="col"><a href="http://www.amazon.cn/" target="_blank">亚马逊</a></th>
+      <th width="52" scope="col"><a href="http://www.vip.com/" target="_blank">唯品会</a></th>
+      <th width="29" scope="col">&nbsp;</th>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    </tbody>
+</table>
+</div>
+</center>
+<center>
+<button class="btn1">Hide</button>
+<button class="btn2">Show</button>
+</center>
+<br>
+
+
+<script type="text/javascript" src="js/jquery/jquery-2.1.1.js"></script>
+<center>
+<a  href="page.html" title="">分页</a>
+</center>
+
+<center>
+  <div id="welcome">
+    
+  </div>
+</center>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#mynav").hide();
+  $(".btn1").click(function(){
+  $("#mynav").slideUp(1000);
+  });
+  $(".btn2").click(function(){
+  $("#mynav").slideDown(1000);
+  });
+});
+
+$(function(){
+  console.info("hello ~");
+
+  $("#submitcoun").click(function(){
+    var zh = $("#zh").val();
+    var mm = $("#mm").val();
+    if (zh=="maobo"&&mm=="123") {
+      $("#welcome").html("<b>welcome! success log in!</b>");
+    };
+    console.info(zh+mm);
+  });
+});
+
+
+
+</script>
+
+
+
+
+</body>
+
+</html>

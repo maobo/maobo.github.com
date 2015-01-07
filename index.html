@@ -8,9 +8,15 @@
 body { font-family:Verdana; font-size:14px; margin:0;}
 
 #container {margin:0 auto; width:100%;padding-top:2px;}
+.mylog{ margin-left:12px;}
 #header { height:auto; background:#9c6; margin-bottom:5px;}
 #mainContent { height:500px; background:#ffa; margin-bottom:5px;padding-top:12px;}
 #footer { height:80px; background:#9c6;}
+.btn02 { background:#fff url(btn_bg2.gif) 0 0; height:22px; width:55px; color:#297405; border:1px solid #90be4a; font-size:12px; font-weight:bold; line-height:180%; cursor:pointer;}
+#btn01 { background:url(btn_bg2.gif) 0 -24px; width:70px; height:22px; color:#9a4501; border:1px solid #dbb119; font-size:12px; line-height:160%; cursor:pointer;}
+.text2 { border:2px solid #390; width:200px; height:24px; font-size:16px; font-weight:bold; line-height:1.6;}
+.text1 { border:1px solid #f60; color:#03C;}
+.layout { height: 300px; width: 400px; background: #99FFcc; }
 </style>
 </head>
 
@@ -18,11 +24,11 @@ body { font-family:Verdana; font-size:14px; margin:0;}
 <div id="container">
 
   <div id="header">
-
-<label>账号：<input type="text" name="" value="" placeholder="请输入您的账号" id="zh"></label>
-<label>密码：<input type="password" name="" value=""placeholder="请输入您的密码" id="mm"></label>
-<button type="" id="submitcoun"  >登录</button><br>
-
+<div class="mylog">
+<label>账号：<input type="text" name="" value="" placeholder="请输入您的账号" id="zh" class="text1"></label>
+<label>密码：<input type="password" name="" value=""placeholder="请输入您的密码" id="mm" class="text1"></label>
+<button type="" id="submitcoun"  class="btn02">登录</button><br>
+</div>
   </div>
 
  <div id="mainContent">
@@ -49,8 +55,8 @@ body { font-family:Verdana; font-size:14px; margin:0;}
 </div>
 </center><br>
 <center>
-<button class="btn2">更多</button>
-<button class="btn1">隐藏</button>
+<button class="btn2" id="btn01">更多</button>
+<button class="btn1" id="btn01">隐藏</button>
 </center>
 <br>
 </div>

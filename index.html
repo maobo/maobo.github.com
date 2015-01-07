@@ -86,8 +86,11 @@ $(function(){
     var mm = $("#mm").val();
     if (zh=="maobo"&&mm=="123") {
       $("#welcome").html("<b>welcome! success log in!</b>");
+    }
+    else{
+      alert("对不起密码或者账号错误！");
     };
-    console.info(zh+mm);
+    console.info("你输入的账号和密码为："+zh+mm +"因为github不支持动态网页，所以密码和账号是固定的，账号maobo密码123哎有点可惜");
   });
 });
 

@@ -3,35 +3,96 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>my nav</title>
-<style type="text/css"
-#header{height:auto;background: red;
-width: 740px;
-}
-}
-></style>
+<title>my nav </title>
+<style type="text/css">
+body { font-family:Verdana; font-size:14px; margin:0;}
+
+#container {margin:0 auto; width:100%;padding-top:2px;}
+#header { height:auto; background:#9c6; margin-bottom:5px;}
+#mainContent { height:500px; background:#ffa; margin-bottom:5px;padding-top:12px;}
+#footer { height:80px; background:#9c6;}
+</style>
 </head>
 
 <body>
-<div id="header"></div>
-<ul id="nav">
-<li><a href="#">首 页</a></li>
-<li><a href="#">文 章</a></li>
-<li><a href="#">相册</a></li>
-<li><a href="#">Bloga>li>
-<li><a href="#">论 坛</a></li>
-<li><a href="#">帮助</a></li>
-</ul>
-<div id="content">
-<h3>前言</h3>
-<p>第一段内容</p>
-<h3>理解CSS盒子模式</h3>
-<p>第二段内容</p>
+<div id="container">
+
+  <div id="header">This is the Header
+
+<label>账号：<input type="text" name="" value="" placeholder="请输入您的账号" id="zh"></label>
+<label>密码：<input type="password" name="" value=""placeholder="请输入您的密码" id="mm"></label>
+<button type="" id="submitcoun"  >登录</button><br>
+
+  </div>
+
+ <div id="mainContent">
+<center>
+<FORM action=http://www.baidu.com/baidu target=_blank>
+
+<INPUT type=hidden value=baidu name=tn> <A href="http://www.baidu.com/"><IMG alt=Baidu src="http://img.baidu.com/img/logo-80px.gif" w align=bottom border=0></A>
+<INPUT size=30 name=word> <INPUT type=submit value=百度搜索>
+</FORM>
+<div id="mynav">
+<table width="312" border="0" cellspacing="2" cellpadding="2">
+  <tbody>
+    <tr>
+      <th width="52" scope="col"><a href="http://www.dangdang.com/" target="_blank">当当网</a></th>
+      <th width="40" scope="col"><a href="http://www.jd.com/" target="_blank">京东</a></th>
+      <th width="50" scope="col"><a href="http://www.taobao.com/" target="_blank">淘宝</a></th>
+      <th width="51" scope="col"><a href="http://www.amazon.cn/" target="_blank">亚马逊</a></th>
+      <th width="52" scope="col"><a href="http://www.vip.com/" target="_blank">唯品会</a></th>
+      <th width="29" scope="col">&nbsp;</th>
+    </tr>
+  
+    </tbody>
+</table>
 </div>
-<div id="footer">
-<p>关于mskeet | 广告服务 | 华升招聘 | 客服中心 | Q Q留言 | 网站管理 | 会员登录 | 购物车</p><p>Copyright ©2006 - 2015 m mskeet. All Rights Reserved</p>
+</center>
+<center>
+<button class="btn2">更多</button>
+<button class="btn1">隐藏</button>
+</center>
+<br>
+</div>
+
+  <div id="footer">
+  <div id="welcome">
+  		<center>
+			<a  href="page.html" title="">分页</a>
+		</center>
+  </div>
+
+</div> 
 </div>
 
 
+<script type="text/javascript" src="js/jquery/jquery-2.1.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#mynav").hide();
+  $(".btn1").click(function(){
+  $("#mynav").slideUp(1000);
+  });
+  $(".btn2").click(function(){
+  $("#mynav").slideDown(1000);
+  });
+});
+
+$(function(){
+  console.info("hello ~");
+
+  $("#submitcoun").click(function(){
+    var zh = $("#zh").val();
+    var mm = $("#mm").val();
+    if (zh=="maobo"&&mm=="123") {
+      $("#welcome").html("<b>welcome! success log in!</b>");
+    };
+    console.info(zh+mm);
+  });
+});
+
+
+
+</script>
 </body>
 </html>

@@ -3,6 +3,7 @@
 <head>
 <title>jQuery手机号码输入提示</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
 <style>
 *{margin:0;padding:0;}
 #main{width:728px;height:300px;padding:60px;margin:0 auto;border:5px solid #CCC;}
@@ -10,14 +11,18 @@ input{border:1px solid #666;}
 .a{border:1px solid red;}
 .text-magnifier{background:none repeat scroll 0 0 #FFFFE4;border:1px solid #E6C99E;color:#FF4800;height:50px;left:170px;padding:5px 0 0 10px;position:absolute;top:30px;width:200px;font:20px Tahoma,Helvetica,Arial,Simsun,sans-serif;}
 .text-magnifier .mag-explain{border-top:1px solid #E6C99E;color:#6C6C6C;font-size:12px;margin-top:5px;width:190px;}
-.fn-hide{display:none}
+.fn-hide{display:none;}
 </style>
+
 </head>
 
 <body>
 
 <div id="main">
-限制输入长度：<input type="text" placeholder="限制输入长度"  maxlength="3"/>
+<form action="/plus/apply" id="plusForm" method="post">
+限制输入长度：<input type="text" placeholder="限制输入长度" id="limit" maxlength="3" required="required"/>
+<div id="xx">xxxx</div><input type="submit"value="submit" id="oo">
+</form>
 只能输入数字的输入框：<input type="text" onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') " placeholder="请输入数字" name="f_order" value=""/> 
 
 手机号码：<input type="text" id="k" maxlength="11" class="i-text" value="" /><div class="text-magnifier fn-hide" id="textMag"  >
@@ -28,6 +33,23 @@ input{border:1px solid #666;}
 
 
 <script type="text/javascript" src="js/jquery/jquery-2.1.1.js"></script>
+
+<script>
+$(function ()
+{
+    $("#oo").click(function ()
+    {
+        
+        var a = $.trim($("#limit").val());
+        if (a.length=0)
+        {
+            alert("xxx");
+        }
+    });
+ });
+
+
+</script>
 <script>
 $(function(){
 $("#k").focus(function(evt){

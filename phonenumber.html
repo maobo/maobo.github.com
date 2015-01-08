@@ -25,7 +25,7 @@ input{border:1px solid #666;}
 </form>
 只能输入数字的输入框：<input type="text" onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') " placeholder="请输入数字" name="f_order" value=""/> 
 
-手机号码：<input type="text" id="k" maxlength="11" class="i-text" value="" /><div class="text-magnifier fn-hide" id="textMag"  >
+手机号码：<input type="text" id="k" maxlength="11" class="i-text" value=""  onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') "  /><div class="text-magnifier fn-hide" id="textMag"   >
 
 <div id="mag-text" class="mag-text"></div>
 
@@ -95,13 +95,13 @@ $("#textMag").addClass("fn-hide")
 function d(e){
 var i = e.value;
 i=$.trim(i);
-var h=i.substring(0,3);
+var number=i.substring(0,3);
 i=i.substring(3);
 while(i&&i.length>0){
-h+="-"+i.substring(0,4);
+number+="-"+i.substring(0,4);
 i=i.substring(4)
 }
-$("#mag-text").html(h);
+$("#mag-text").html(number);
 }
 
 </script>

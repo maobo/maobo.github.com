@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>jQuery手机号码输入提示</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="css/phone.css">
+</head>
+
+<body>
+<br><br><br><br><br>
+手机号码：<input type="text" id="phone_number" maxlength="11"  value=""  onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') "  />
+
+<div class="text-magnifier fn-hide" id="textMag">
+
+<div id="mag-text" class="mag-text"></div>
+ <!-- <div class="mag-explain">手机号码是11位数字</div> -->
+<script type="text/javascript" src="js/jquery/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="js/phone.js"></script>
+
+</body>
+</html>

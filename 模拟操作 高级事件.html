@@ -1,0 +1,49 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>my nav </title>
+
+</head>   
+<body>
+
+<input type="button" value="模拟事件">
+
+<input type="button" value="test" id="xx" onclick="dd()">
+
+
+<script type="text/javascript" src="js/jquery/jquery-2.1.1.js"></script>
+<script type="text/javascript"> 
+/*$("input").click(function(){
+
+	alert("OK");
+});
+$("input").trigger("click");
+*/
+
+$("input").click(function(e,data1,data2,data3,data4){
+
+	alert("传递参数"+data1+"|"+data2+"|"+data3+"|"+data4.name);
+}).triggerHandler("click",["参数1","参数2",['a','b','c','d'],{name:'对象姓名'}]);
+
+// function dd(){
+// 	//删除图片
+// 	$("#xx").bind("myfunction",function(){
+// 		alert("自定义事件");
+// 	}).triggerHandler('myfunction');
+// }
+
+$('.animate').click(function () {
+$('#box').animate({
+'width' : '300px',
+'height' : '200px'
+}, 1000, function () {
+alert('动画执行完毕执行我！');
+});
+});
+到
+</script>
+
+</body>   
+</html>  

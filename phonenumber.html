@@ -22,6 +22,7 @@ input{border:1px solid #666;}
 <form action="/plus/apply" id="plusForm" method="post"> 
 限制输入长度：<input type="text" placeholder="限制输入长度" id="limit" maxlength="3" required="required"/>
 弹数字键盘：<input type="number" placeholder="限制输入长度" id="limit" maxlength="11" required="required"/>
+弹数字键盘2加限制：<input type="number" onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') " placeholder="请输入数字" name="f_order" value=""/> 
 <div id="xx">xxxx</div><input type="submit"value="submit" id="oo">
 </form>
 只能输入数字的输入框：<input type="text" onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') " placeholder="请输入数字" name="f_order" value=""/> 

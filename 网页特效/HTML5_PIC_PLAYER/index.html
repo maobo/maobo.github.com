@@ -1,0 +1,72 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <title>pic player</title> 
+
+        <link href="./animate.css" rel="stylesheet" type="text/css">
+
+        <script src="./js/jx.all.js"></script>
+
+        <script src="./js/jxanimate.js"></script>
+        <script src="./js/jxanimate.effects.js"></script>
+
+        <script src="./js/slideshow.js"></script>
+        <script src="./js/slideshow.effects.js"></script>
+
+
+    </head> 
+    <style type="text/css"> 
+    img{border:0;} 
+    .slide_Img{
+        display: none;
+        visibility: collapse;
+    }
+    .card_piece{
+      position: absolute;
+      visibility: hidden;
+    }
+    .hidden{
+      visibility: hidden;
+    }
+    .visible{
+      visibility: visible;
+    }
+    #stage
+    {
+      position: relative;
+      top: 0px;
+      left: 0px;
+    }
+    </style> 
+    <body> 
+            there is a pic-player 
+        <div id="picplayer" style="position:relative;width:300px;height:300px;clear:none;border:solid 1px #ccc;"> 
+            <img src="http://img.jb51.net/online/picPlayer/1.jpg">
+        </div> 
+        <button id="prev" onclick="SlideShow.prev();">up</button>
+        <button id="next" onclick="SlideShow.next();">down</button>
+        <script> 
+
+            var pics1 = [
+                'http://img.jb51.net/online/picPlayer/1.jpg',
+                'http://img.jb51.net/online/picPlayer/2.jpg',
+                'http://img.jb51.net/online/picPlayer/3.jpg'
+                ];
+
+            SlideShow.init('picplayer',{imgW:300,imgH:300,
+                num:6});
+            SlideShow.setDonimo(900/6/6);
+
+            //添加更多图片
+            for (var i = pics1.length - 1; i >= 1; i--) {
+                SlideShow.addImgByUrl(pics1[i]);
+            };
+
+
+           
+
+        </script> 
+
+         
+    </body> 
+</html>

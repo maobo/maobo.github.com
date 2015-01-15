@@ -19,19 +19,27 @@ input{border:1px solid #666;}
 <body>
 
 <div id="main">
-<form action="/plus/apply" id="plusForm" method="post"> 
-限制输入长度：<input type="text" placeholder="限制输入长度" id="limit" maxlength="3" required="required"/>
-弹数字键盘：<input type="number" placeholder="限制输入长度" id="limit" maxlength="11" required="required"/>
-弹数字键盘2加限制：<input type="number" onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') " placeholder="请输入数字" name="f_order" value=""/> 
-<div id="xx">xxxx</div><input type="submit"value="submit" id="oo">
+<form action="index.html" id="plusForm" method="post"> 
+用正则表达式限制只能输入中文：<input type="text" placeholder="只能输入中文" onkeyup="value=value.replace(/[^\u4E00-\u9FA5]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\u4E00-\u9FA5]/g,''))"/><br><br>
+用正则表达式限制只能输入数字和英文：<input type="text" placeholder="只能输入数字和英文" id="limit" maxlength="50" required="required" onkeyup="value=value.replace(/[\W]/g,'') "onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" /><br><br>
+限制输入长度：<input type="text" placeholder="限制输入长度" id="limit" maxlength="3" required="required"/><br><br>
+弹数字键盘：<input type="number" placeholder="弹数字键盘：" id="limit" maxlength="11" required="required"/><br><br>
+弹数字键盘2加限制：<input type="number" onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') " placeholder="弹数字键盘2加限制只能输入数字" name="f_order" value=""/> <br><br>
+
+只能输入数字的输入框：<input type="text" onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') " placeholder="请输入数字" name="f_order" value=""/> <br><br>
+
+手机号码：<input type="text" id="k" placeholder="手机号码输入框" maxlength="11" class="i-text" value=""  onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') "  /><br><br>
+<input type="submit" value="提交表单数据" >
 </form>
-只能输入数字的输入框：<input type="text" onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') " placeholder="请输入数字" name="f_order" value=""/> 
 
-手机号码：<input type="text" id="k" maxlength="11" class="i-text" value=""  onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') "  /><div class="text-magnifier fn-hide" id="textMag"   >
 
-<div id="mag-text" class="mag-text"></div>
 
-<div class="mag-explain">手机号码是11位数字</div>
+<div class="text-magnifier fn-hide" id="textMag"> <br>
+
+
+<div id="mag-text" class="mag-text"></div>  <br>
+
+<div class="mag-explain">手机号码是11位数字</div> 
 
 
 <script type="text/javascript" src="js/jquery/jquery-2.1.1.js"></script>

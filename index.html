@@ -2,20 +2,38 @@
 <head>
   <title>看时间</title>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+  <style type="text/css">
+ 
+    .showTime  {
+        font-size:80px;
+    }
+        .showlocal{
+                font-size:50px;
+        }
+ 
+  </style>
 </head>
 
 <body>
-  看时间:<br />
+  <br />
 
-  <div class="showTime">
-    2017年6月8日11:42:46
-  </div><script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js" type="text/javascript">
-</script><script type="text/javascript">
-//<![CDATA[
+ 
+
+  <div class="showTime"></div>
+
+ <div class="showlocal">
+    <span id="latitude"></span>
+	<span id="longitude"></span> 
+</div>	
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js" type="text/javascript">
+</script> <script type="text/javascript">
+ 
         $(function(){
             var time = new Date();
             setInterval(function(){$('.showTime').html( CurentTime())},1000);
+
+                 getLocation();
+                        
         });
                 
                 
@@ -53,8 +71,68 @@
         if (ss < 10) clock += '0'; 
         clock += ss; 
         return(clock); 
-  }
-  //]]>
-  </script>
+    }
+
+
+    var latitude;
+    var longitude;
+    var gridid;
+    var localflag=0;
+
+
+    function onBridgeReady() {
+        WeixinJSBridge.call('hideOptionMenu');
+    }
+
+    if (typeof WeixinJSBridge == "undefined") {
+        if (document.addEventListener) {
+                document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+        } else if (document.attachEvent) {
+                document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+                document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+        }
+    } else {
+        onBridgeReady();
+    }
+
+
+
+    var geolocation, marker;
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(locationSuccess,
+                errorCallback, {
+                    enableHighAcuracy : true,
+                    timeout : 5000,
+                    maximumAge : 5000
+                });
+        }
+    }
+    locationSuccess = function(position) {
+        loadLocationData(position);
+    }
+    errorCallback = function(error) {
+        console.log('---出错了---' + error);
+        // loadLocationData();
+    }
+
+           function loadLocationData(position) {
+        if (position != null) {
+            var coords = position.coords;
+            latitude = coords.latitude;
+            longitude = +coords.longitude;
+        } else {
+            latitude = 22.545318;
+            longitude = 114.016759;
+        }
+        console.log('纬度：' + latitude + '  经度：' + longitude);
+                 
+        $('#latitude').html(latitude);
+        $('#longitude').html(longitude);
+
+    } 
+ 
+    </script>
+  </form>
 </body>
 </html>
